@@ -1,0 +1,10 @@
+{
+  "alpha": 0.0,
+  "gate_cameras": [
+    "cam_A",
+    "cam_F"
+  ],
+  "max_change_people": 3.0,
+  "selection_source": "FOUR_OLDER_RECORDINGS_ONLY",
+  "pass_outer_guardrail": false
+}

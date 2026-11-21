@@ -1,0 +1,39 @@
+{
+  "experiment": "V3_4_SHADOW_FORECAST_CALIBRATION",
+  "selected_alpha": 0.0,
+  "alpha_grid": [
+    0.0,
+    0.1,
+    0.2,
+    0.35
+  ],
+  "selection_source": "ONLY_OLD_RECORDINGS_WITH_PAST_ONLY_TRAIN",
+  "correction_cap_people": 5.0,
+  "shadow_lookback_minutes": 12,
+  "shadow_horizons": [
+    3,
+    6,
+    9,
+    12
+  ],
+  "forecast_horizons": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "calibration_confident": false,
+  "NO_AUTOMATIC_PROMOTION": true,
+  "NO_SUBMISSION": true
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "V3_3_E_RESIDUAL_RIDGE_RESEARCH_NOT_DEPLOYED",
+  "features": [
+    "temporal_shape",
+    "endpoint_slope",
+    "curvature",
+    "reference_minus_champion",
+    "gap_skew",
+    "local_momentum_disagreement"
+  ],
+  "coefficients": [
+    0.08340398111060934,
+    -0.29685472944071684,
+    -0.031196773601026052,
+    -1.1334275944219285,
+    0.11127122829659271,
+    -0.08135894006133461
+  ],
+  "ridge_lambda": 2.0,
+  "shrink": 0.5,
+  "cap": 3.0,
+  "gating": "camera==cam_E and endpoint_slope<=-2 and length 5-15",
+  "training_source": "two historically reused labeled recordings, pseudo gaps excluding frozen Missing IDs",
+  "passes_two_date_pseudo_guardrail": false,
+  "never_promote_automatically": true
+}

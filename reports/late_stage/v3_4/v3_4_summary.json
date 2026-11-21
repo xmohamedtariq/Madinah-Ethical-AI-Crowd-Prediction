@@ -1,0 +1,345 @@
+{
+  "experiment": "V3_4_CAUSAL_SHADOW_FORECAST_RESIDUAL",
+  "timestamp_utc": "2026-11-21T18:01:49.610407+00:00",
+  "status": "RESEARCH_ONLY_NO_SUBMISSION",
+  "champion_reference_full_frozen_score_NOT_REPLAYED": 0.6057000521183546,
+  "target_full_score": 0.6,
+  "new_verified_full_score": null,
+  "champion_identity": {
+    "kind": "SELECTED_CHAMPION_CALLBACK",
+    "path": "C:\\Users\\USER\\Desktop\\Madinah-AI-Fresh\\verified_605700\\cloud_research\\selected\\candidate.py",
+    "sha256": "836f54e615089b67099d7b6d2d685765bc999b96bd14f2599982c095fbffa930"
+  },
+  "train_sha256": "3210a0b33212a60a888977848ec09f5f89bc0954bfd3b88e61fb9d840537f6f6",
+  "source_sha_after": "836f54e615089b67099d7b6d2d685765bc999b96bd14f2599982c095fbffa930",
+  "rules": {
+    "train_recordings_strictly_earlier_than_target": true,
+    "released_and_reference_only_at_or_before_now": true,
+    "shadow_targets_future_of_shadow_origin_but_observed_by_main_origin": true,
+    "removed_hidden_cameras_on_later_pseudo": true,
+    "camera_E_never_corrected": true,
+    "no_truth_in_champion_inputs": true,
+    "no_submit_files_or_kaggle_api": true
+  },
+  "coverage": {
+    "20260905_1124": {
+      "total_eligible_origins": 84,
+      "selected": [
+        {
+          "now": 731,
+          "cameras": [
+            "cam_A",
+            "cam_B",
+            "cam_D",
+            "cam_F",
+            "cam_G",
+            "cam_H"
+          ]
+        },
+        {
+          "now": 747,
+          "cameras": [
+            "cam_A",
+            "cam_F",
+            "cam_H"
+          ]
+        },
+        {
+          "now": 764,
+          "cameras": [
+            "cam_A",
+            "cam_F",
+            "cam_H"
+          ]
+        },
+        {
+          "now": 780,
+          "cameras": [
+            "cam_A",
+            "cam_B",
+            "cam_C",
+            "cam_D",
+            "cam_F",
+            "cam_G",
+            "cam_H"
+          ]
+        }
+      ],
+      "excluded_hidden_cameras": [],
+      "never_correct_camera_E": true
+    },
+    "20260905_1900": {
+      "total_eligible_origins": 113,
+      "selected": [
+        {
+          "now": 1192,
+          "cameras": [
+            "cam_A",
+            "cam_B",
+            "cam_C",
+            "cam_D",
+            "cam_F",
+            "cam_G",
+            "cam_H"
+          ]
+        },
+        {
+          "now": 1215,
+          "cameras": [
+            "cam_A",
+            "cam_B",
+            "cam_D",
+            "cam_F"
+          ]
+        },
+        {
+          "now": 1237,
+          "cameras": [
+            "cam_A",
+            "cam_B",
+            "cam_D",
+            "cam_F",
+            "cam_H"
+          ]
+        },
+        {
+          "now": 1260,
+          "cameras": [
+            "cam_A",
+            "cam_C",
+            "cam_F",
+            "cam_H"
+          ]
+        }
+      ],
+      "excluded_hidden_cameras": [],
+      "never_correct_camera_E": true
+    },
+    "20260911_1100": {
+      "total_eligible_origins": 502,
+      "selected": [
+        {
+          "now": 817,
+          "cameras": [
+            "cam_A",
+            "cam_C",
+            "cam_D",
+            "cam_F",
+            "cam_H"
+          ]
+        },
+        {
+          "now": 937,
+          "cameras": [
+            "cam_A",
+            "cam_D",
+            "cam_H"
+          ]
+        },
+        {
+          "now": 1038,
+          "cameras": [
+            "cam_A",
+            "cam_C",
+            "cam_D",
+            "cam_H"
+          ]
+        },
+        {
+          "now": 1138,
+          "cameras": [
+            "cam_A",
+            "cam_D",
+            "cam_F",
+            "cam_H"
+          ]
+        }
+      ],
+      "excluded_hidden_cameras": [
+        "cam_B",
+        "cam_G"
+      ],
+      "never_correct_camera_E": true
+    },
+    "20260912_1100": {
+      "total_eligible_origins": 522,
+      "selected": [
+        {
+          "now": 794,
+          "cameras": [
+            "cam_A",
+            "cam_B",
+            "cam_C",
+            "cam_F",
+            "cam_H"
+          ]
+        },
+        {
+          "now": 918,
+          "cameras": [
+            "cam_A",
+            "cam_B",
+            "cam_F",
+            "cam_H"
+          ]
+        },
+        {
+          "now": 1023,
+          "cameras": [
+            "cam_A",
+            "cam_B",
+            "cam_C",
+            "cam_F",
+            "cam_G",
+            "cam_H"
+          ]
+        },
+        {
+          "now": 1135,
+          "cameras": [
+            "cam_A",
+            "cam_B",
+            "cam_F",
+            "cam_H"
+          ]
+        }
+      ],
+      "excluded_hidden_cameras": [
+        "cam_D"
+      ],
+      "never_correct_camera_E": true
+    }
+  },
+  "future_poison_audits": [
+    {
+      "recording": "20260911_1100",
+      "now": 817,
+      "future_values_mutated": 3501,
+      "max_pred_change": 0.0,
+      "passed": true
+    },
+    {
+      "recording": "20260912_1100",
+      "now": 794,
+      "future_values_mutated": 3765,
+      "max_pred_change": 0.0,
+      "passed": true
+    }
+  ],
+  "older_alpha_scan": [
+    {
+      "alpha": 0.0,
+      "mean_delta": 0.0,
+      "worst_delta": 0.0,
+      "wins": 0,
+      "n_recordings": 2,
+      "supported": false,
+      "per_recording": {
+        "20260905_1124": 0.0,
+        "20260905_1900": 0.0
+      }
+    },
+    {
+      "alpha": 0.1,
+      "mean_delta": 0.00423497065250613,
+      "worst_delta": 0.0053153457958691,
+      "wins": 0,
+      "n_recordings": 2,
+      "supported": false,
+      "per_recording": {
+        "20260905_1124": 0.0053153457958691,
+        "20260905_1900": 0.0031545955091431613
+      }
+    },
+    {
+      "alpha": 0.2,
+      "mean_delta": 0.008718344972753436,
+      "worst_delta": 0.010893654160732765,
+      "wins": 0,
+      "n_recordings": 2,
+      "supported": false,
+      "per_recording": {
+        "20260905_1124": 0.010893654160732765,
+        "20260905_1900": 0.006543035784774108
+      }
+    },
+    {
+      "alpha": 0.35,
+      "mean_delta": 0.015549176715764107,
+      "worst_delta": 0.01875888595378457,
+      "wins": 0,
+      "n_recordings": 2,
+      "supported": false,
+      "per_recording": {
+        "20260905_1124": 0.01875888595378457,
+        "20260905_1900": 0.012339467477743643
+      }
+    }
+  ],
+  "frozen_config_hash": "c157d11b5002315ae311810987e3d3f00addae977b9b48e85d3db9aeede44def",
+  "selected_alpha": 0.0,
+  "per_recording": [
+    {
+      "recording": "20260905_1124",
+      "stage": "OLDER_CALIBRATION",
+      "rows": 285,
+      "alpha": 0.0,
+      "reference_mae": 37.12993684210526,
+      "champion_mae": 35.86807918267671,
+      "candidate_mae": 35.86807918267671,
+      "champion_ratio": 0.9660150873729038,
+      "candidate_ratio": 0.9660150873729038,
+      "delta_ratio": 0.0,
+      "changed": 0
+    },
+    {
+      "recording": "20260905_1900",
+      "stage": "OLDER_CALIBRATION",
+      "rows": 300,
+      "alpha": 0.0,
+      "reference_mae": 28.999893333333336,
+      "champion_mae": 29.05315884541714,
+      "candidate_mae": 29.05315884541714,
+      "champion_ratio": 1.00183674855185,
+      "candidate_ratio": 1.00183674855185,
+      "delta_ratio": 0.0,
+      "changed": 0
+    },
+    {
+      "recording": "20260911_1100",
+      "stage": "LATER_PSEUDO_REUSED_DATE",
+      "rows": 240,
+      "alpha": 0.0,
+      "reference_mae": 17.09969583333333,
+      "champion_mae": 15.892357031695637,
+      "candidate_mae": 15.892357031695637,
+      "champion_ratio": 0.9293941358135642,
+      "candidate_ratio": 0.9293941358135642,
+      "delta_ratio": 0.0,
+      "changed": 0
+    },
+    {
+      "recording": "20260912_1100",
+      "stage": "LATER_PSEUDO_REUSED_DATE",
+      "rows": 285,
+      "alpha": 0.0,
+      "reference_mae": 11.677828070175437,
+      "champion_mae": 10.543101660604346,
+      "candidate_mae": 10.543101660604346,
+      "champion_ratio": 0.9028306973906285,
+      "candidate_ratio": 0.9028306973906285,
+      "delta_ratio": 0.0,
+      "changed": 0
+    }
+  ],
+  "later_both_improve": false,
+  "decision": "REJECT_OR_ABSTAIN_NO_AUTOMATIC_PROMOTION",
+  "limitations": [
+    "The 9/11 and 9/12 dates have been reused across many previous experiments; they are not untouched independent validation.",
+    "The pseudo-forecast masks do NOT match all four official frozen tasks or official reference denominators.",
+    "Forecast-only proxy ratios cannot be added to 0.605700 to claim a new competition score.",
+    "Official public/private Kaggle improvement is not demonstrated.",
+    "Older recordings are short and may have too little context for representative champion predictions.",
+    "Even a positive shadow result requires exact frozen protocol replay and further generalization evidence."
+  ]
+}

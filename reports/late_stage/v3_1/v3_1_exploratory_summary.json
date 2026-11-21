@@ -1,0 +1,121 @@
+{
+  "experiment": "V3_1_GAP_RESIDUAL_REPLAY",
+  "timestamp_utc": "2026-11-21T17:39:17.079504+00:00",
+  "status": "REUSED_FROZEN_DEVELOPMENT_ONLY",
+  "champion_reconstructed_exact_score": 0.6057000521183546,
+  "official_kaggle_best_unchanged_from_user_report": 0.729,
+  "full_task_score_reconstructed": true,
+  "task_components": 8,
+  "missing_target_count": 358,
+  "missing_gap_count": 46,
+  "fast_falling_count": 147,
+  "fast_falling_AEF_count": 115,
+  "fast_falling_AEF_score_contribution": 0.08556312239997646,
+  "all_missing_score_contribution": 0.1698722174481765,
+  "label_invariance": "PASS",
+  "candidate_specs_exploratory_reused_folds": [
+    "A: 10% curvature from adjacent released mean slopes, capped +/-3 persons",
+    "B: 5% pull towards endpoint interpolation, capped +/-3 persons",
+    "C: 7.5% curvature + 2.5% endpoint pull, capped +/-3 persons",
+    "All: only A/E/F, released endpoint slope <= -2, gap length 5-15, pattern falling_fast"
+  ],
+  "candidates": [
+    {
+      "model": "verified_champion_unchanged",
+      "full_score_reused_frozen": 0.6057000521183546,
+      "delta_vs_champion_negative_is_better": 0.0,
+      "modified_rows": 0,
+      "eligible_gated_rows": 115,
+      "modified_blocks": 0,
+      "mean_abs_change_on_modified": 0.0,
+      "recording_full_score_deltas": {
+        "20260911_1100": 0.0,
+        "20260912_1100": 0.0
+      },
+      "would_cross_0_600_on_reused_folds_only": false,
+      "accepted_into_champion": false,
+      "acceptance_status": "CHAMPION_PRESERVED"
+    },
+    {
+      "model": "V3_1A_curvature_10pct_cap3",
+      "full_score_reused_frozen": 0.6044515190612298,
+      "delta_vs_champion_negative_is_better": -0.001248533057124801,
+      "modified_rows": 115,
+      "eligible_gated_rows": 115,
+      "modified_blocks": 12,
+      "mean_abs_change_on_modified": 1.0758259901563196,
+      "recording_full_score_deltas": {
+        "20260911_1100": -0.0023699501330649267,
+        "20260912_1100": 0.001121417075940121
+      },
+      "would_cross_0_600_on_reused_folds_only": false,
+      "accepted_into_champion": false,
+      "acceptance_status": "REJECT_REUSED_OR_UNSTABLE"
+    },
+    {
+      "model": "V3_1B_linear_pull_5pct_cap3",
+      "full_score_reused_frozen": 0.6066614755753169,
+      "delta_vs_champion_negative_is_better": 0.0009614234569622626,
+      "modified_rows": 115,
+      "eligible_gated_rows": 115,
+      "modified_blocks": 12,
+      "mean_abs_change_on_modified": 0.5518880305727513,
+      "recording_full_score_deltas": {
+        "20260911_1100": 0.00042560666324213567,
+        "20260912_1100": 0.0005358167937201696
+      },
+      "would_cross_0_600_on_reused_folds_only": false,
+      "accepted_into_champion": false,
+      "acceptance_status": "REJECT_REUSED_OR_UNSTABLE"
+    },
+    {
+      "model": "V3_1C_curvature_7p5_bridge_2p5_cap3",
+      "full_score_reused_frozen": 0.6047059140442689,
+      "delta_vs_champion_negative_is_better": -0.0009941380740857708,
+      "modified_rows": 115,
+      "eligible_gated_rows": 115,
+      "modified_blocks": 12,
+      "mean_abs_change_on_modified": 0.9317082137427293,
+      "recording_full_score_deltas": {
+        "20260911_1100": -0.002115867249405553,
+        "20260912_1100": 0.0011217291753197831
+      },
+      "would_cross_0_600_on_reused_folds_only": false,
+      "accepted_into_champion": false,
+      "acceptance_status": "REJECT_REUSED_OR_UNSTABLE"
+    }
+  ],
+  "prior_v2_forecast_changed_despite_narrative": [
+    {
+      "candidate": "nearest_profile_hidden_only",
+      "recording": "20260911_1100",
+      "forecast_mae_delta": 0.012952776821443024
+    },
+    {
+      "candidate": "nearest_profile_hidden_only",
+      "recording": "20260912_1100",
+      "forecast_mae_delta": -0.034480641551517976
+    },
+    {
+      "candidate": "rts_missing_only",
+      "recording": "20260911_1100",
+      "forecast_mae_delta": 0.012952776821443024
+    },
+    {
+      "candidate": "rts_missing_only",
+      "recording": "20260912_1100",
+      "forecast_mae_delta": -0.034480641551517976
+    }
+  ],
+  "production_integration_allowed": false,
+  "submission_generated": false,
+  "limitations": [
+    "Reused 20260911 and 20260912 development folds; not blind or independent",
+    "Full train/test, complete champion callback and frozen evaluator not included in diagnostic bundle",
+    "Coefficient family and scope were informed by inspected development folds; no independent model selection claim",
+    "The provided diagnostics hold labels; prediction function accesses only listed released-context features and the champion prediction",
+    "The claim that local_prev_mean/local_next_mean use released context must be checked against diagnose_missing.py before integration",
+    "Older four recording holdouts were already used for RTS research; cannot be called untouched",
+    "Predictions not saved; score deltas calculated without changing any non-Missing prediction"
+  ]
+}

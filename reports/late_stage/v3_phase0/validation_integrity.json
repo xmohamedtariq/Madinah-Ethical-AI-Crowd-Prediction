@@ -1,0 +1,113 @@
+{
+  "champion_local_score": 0.6057000521183546,
+  "champion_official_public_best": 0.729,
+  "reused_frozen_folds": [
+    "20260911_1100",
+    "20260912_1100"
+  ],
+  "reused_frozen_status": "REUSED_MATCHED_DEVELOPMENT_ONLY",
+  "independent_recording_holdouts": [
+    {
+      "recording": "20260904_1105",
+      "n": 78,
+      "blocks": 6,
+      "reference_mae": 10.807605767619345,
+      "champion_mae": 13.62735057222402,
+      "rts_mae": 12.073477558673677,
+      "champion_ratio": 1.2609037436443982,
+      "rts_ratio": 1.1171278651602012,
+      "incremental_full_score_delta_rts_vs_champion": -0.0359439696210492
+    },
+    {
+      "recording": "20260905_0426",
+      "n": 72,
+      "blocks": 7,
+      "reference_mae": 5.304886739417992,
+      "champion_mae": 4.390933225865681,
+      "rts_mae": 5.48402105665759,
+      "champion_ratio": 0.8277147923326669,
+      "rts_ratio": 1.0337677929876503,
+      "incremental_full_score_delta_rts_vs_champion": 0.0515132501637458
+    },
+    {
+      "recording": "20260905_1124",
+      "n": 76,
+      "blocks": 8,
+      "reference_mae": 8.110412097953215,
+      "champion_mae": 6.664837245734288,
+      "rts_mae": 8.56649097811091,
+      "champion_ratio": 0.821763082472253,
+      "rts_ratio": 1.0562337492410272,
+      "incremental_full_score_delta_rts_vs_champion": 0.0586176666921935
+    },
+    {
+      "recording": "20260905_1900",
+      "n": 75,
+      "blocks": 7,
+      "reference_mae": 8.65921851851852,
+      "champion_mae": 7.701707725115619,
+      "rts_mae": 7.077406692272573,
+      "champion_ratio": 0.8894229552753314,
+      "rts_ratio": 0.817326260693953,
+      "incremental_full_score_delta_rts_vs_champion": -0.0180241736453445
+    }
+  ],
+  "independent_holdout_protocol": "Four earlier train recordings held out in turn; approximately 70-80 rows across 6-8 contiguous 5-18 minute blocks are masked from released same-recording context. Fit/config selection uses other recordings only. These small recordings differ in length and camera coverage; results are Missing-only and not full four-task benchmark scores.",
+  "frozen_rts_causality_checks": {
+    "requested": true,
+    "checks": [
+      {
+        "recording": "20260911_1100",
+        "status": "PASS_SAMPLED_CHECK",
+        "now_minute_of_day": 955.0,
+        "targets_checked": 32,
+        "future_observations_perturbed": 699,
+        "max_absolute_difference": 0.0,
+        "training_data_unchanged": true
+      },
+      {
+        "recording": "20260912_1100",
+        "status": "PASS_SAMPLED_CHECK",
+        "now_minute_of_day": 954.0,
+        "targets_checked": 30,
+        "future_observations_perturbed": 830,
+        "max_absolute_difference": 0.0,
+        "training_data_unchanged": true
+      }
+    ],
+    "scope": "One cutoff per recording; query context only; not exhaustive"
+  },
+  "hidden_candidate_causality_checks": {
+    "requested": true,
+    "checks": [
+      {
+        "recording": "20260911_1100",
+        "status": "PASS_SAMPLED_CHECK",
+        "now_minute_of_day": 955.0,
+        "targets_checked": 32,
+        "future_observations_perturbed": 699,
+        "max_absolute_difference": 0.0,
+        "training_data_unchanged": true
+      },
+      {
+        "recording": "20260912_1100",
+        "status": "PASS_SAMPLED_CHECK",
+        "now_minute_of_day": 954.0,
+        "targets_checked": 30,
+        "future_observations_perturbed": 830,
+        "max_absolute_difference": 0.0,
+        "training_data_unchanged": true
+      }
+    ],
+    "scope": "One cutoff per recording; query context only; not exhaustive"
+  },
+  "label_invariance": "Frozen evaluator passes only train, released, target metadata, and baseline; it rejects people_true/people_ref in callback inputs. Candidate fitting/calibration cannot access held-out labels through the callback.",
+  "future_use": "Missing and Hidden candidates use only released observations; RTS is two-sided for Missing as permitted. Forecast and Hidden-future outputs remain exactly the selected champion outputs.",
+  "selected_fold_reuse_risk": "The two frozen development recordings were repeatedly tuned and are not independent final validation.",
+  "candidate_frozen_scores": {
+    "rts_missing_only": 0.6858795886945268,
+    "nearest_profile_hidden_only": 0.6602814177115182
+  },
+  "official_score_verified": false,
+  "submission_generated": false
+}

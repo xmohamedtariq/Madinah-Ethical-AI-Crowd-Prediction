@@ -1,0 +1,364 @@
+{
+  "candidate": "Madinah_FINAL_HighRisk_CausalLast.csv",
+  "source": "Madinah_LastShot_Experimental.csv",
+  "sha256": "2d18dceba55a67119348a1e0a37c19854a44ff1e47304278c5c2cf80c547d72a",
+  "size_bytes": 165186,
+  "rows": 4457,
+  "new_camera_forecasts_modified": 555,
+  "new_camera_forecast_total": 555,
+  "max_abs_change": 27.599880310000003,
+  "mean_abs_change_newcam": 6.127785730594594,
+  "changed_by_kind": {
+    "forecast": 555,
+    "hidden": 0,
+    "hidden-future": 0,
+    "missing": 0
+  },
+  "other_kinds_identical_to_source": true,
+  "origin_groups": [
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_I",
+      "origin": 843,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 29.666,
+      "mean_original": 28.784276560000002
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_I",
+      "origin": 896,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 33.765,
+      "mean_original": 28.750639867333337
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_I",
+      "origin": 955,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 53.346,
+      "mean_original": 44.704785384000004
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_I",
+      "origin": 1009,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 73.775,
+      "mean_original": 80.29926292399999
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_J",
+      "origin": 843,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 29.592,
+      "mean_original": 36.68555954466667
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_J",
+      "origin": 896,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 37.947,
+      "mean_original": 35.622152374
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_J",
+      "origin": 955,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 75.554,
+      "mean_original": 57.82804116733334
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_J",
+      "origin": 1009,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 157.154,
+      "mean_original": 149.8556973106667
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_K",
+      "origin": 843,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 23.645,
+      "mean_original": 31.654486174
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_K",
+      "origin": 896,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 29.79,
+      "mean_original": 33.27221102866666
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_K",
+      "origin": 955,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 78.59,
+      "mean_original": 64.45411334733332
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_K",
+      "origin": 1009,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 185.529,
+      "mean_original": 163.28241656933335
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_L",
+      "origin": 843,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 74.631,
+      "mean_original": 70.42756398933334
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_L",
+      "origin": 896,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 50.579,
+      "mean_original": 55.07424347999999
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_L",
+      "origin": 955,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 60.548,
+      "mean_original": 50.850708456666666
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_L",
+      "origin": 1009,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 126.238,
+      "mean_original": 112.80900492933333
+    },
+    {
+      "recording": "20260918_1100",
+      "camera": "cam_M",
+      "origin": 843,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 7.824,
+      "mean_original": 9.135974855999997
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_I",
+      "origin": 848,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 15.063,
+      "mean_original": 20.591897107333335
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_I",
+      "origin": 904,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 39.644,
+      "mean_original": 44.062561348
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_I",
+      "origin": 954,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 28.841,
+      "mean_original": 29.824225543333338
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_I",
+      "origin": 1007,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 69.658,
+      "mean_original": 62.89949356800001
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_J",
+      "origin": 848,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 35.353,
+      "mean_original": 29.075096564666673
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_J",
+      "origin": 904,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 20.136,
+      "mean_original": 24.840629664666668
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_J",
+      "origin": 954,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 27.817,
+      "mean_original": 31.834063723333333
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_J",
+      "origin": 1007,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 84.504,
+      "mean_original": 79.1047927553333
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_K",
+      "origin": 848,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 34.32,
+      "mean_original": 30.148682726666667
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_K",
+      "origin": 904,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 23.562,
+      "mean_original": 30.10078663066667
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_K",
+      "origin": 954,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 29.731,
+      "mean_original": 39.27491158066666
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_K",
+      "origin": 1007,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 99.954,
+      "mean_original": 94.68033979133334
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_L",
+      "origin": 848,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 39.82,
+      "mean_original": 39.53434489400001
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_L",
+      "origin": 904,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 73.538,
+      "mean_original": 67.85579754266665
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_L",
+      "origin": 954,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 40.404,
+      "mean_original": 37.96091117
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_L",
+      "origin": 1007,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 96.569,
+      "mean_original": 85.47428717800001
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_M",
+      "origin": 848,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 9.727,
+      "mean_original": 9.230491926666668
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_M",
+      "origin": 904,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 9.694,
+      "mean_original": 10.867080838666668
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_M",
+      "origin": 954,
+      "rows": 15,
+      "lag": 1,
+      "last_observed": 10.349,
+      "mean_original": 11.203256453333333
+    },
+    {
+      "recording": "20260919_1100",
+      "camera": "cam_M",
+      "origin": 1007,
+      "rows": 15,
+      "lag": 0,
+      "last_observed": 27.118,
+      "mean_original": 26.07053605533333
+    }
+  ],
+  "validation_train_shadow": {
+    "protocol": "released historical train.csv only; last-observation vs mean-reversion on 6 recordings",
+    "last_mae": 20.252758,
+    "reversal25_mae": 20.367278,
+    "note": "Different cameras/recordings, cannot establish improvement on Kaggle new cameras"
+  },
+  "verified_local_score": null,
+  "official_kaggle_score": null,
+  "can_claim_0_400": false,
+  "risk": "HIGH. Test cameras I-M never appear in historical TRAIN; a fixed carry-forward forecast can be worse than archived reference. This is a causal alternative, not a validated winning file.",
+  "user_action": "Manually choose whether to submit; file has not been uploaded to Kaggle"
+}

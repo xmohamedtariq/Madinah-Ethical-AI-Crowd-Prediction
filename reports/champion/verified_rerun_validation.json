@@ -1,0 +1,147 @@
+{
+  "status": "REUSED_MATCHED_DEVELOPMENT_ONLY",
+  "reference_status": "LOCAL_RECONSTRUCTION_NOT_OFFICIALLY_VERIFIED",
+  "local_surrogate_score": 0.6057000521183546,
+  "baseline_local_surrogate_score": 0.6218943696608434,
+  "relative_improvement_pct": 2.6040302553825225,
+  "candidate_better_on_this_protocol": true,
+  "folds": {
+    "20260911_1100": {
+      "score": 0.6210356957540952,
+      "baseline_score": 0.637123903560442,
+      "components": {
+        "forecast": {
+          "count": 936,
+          "mae_model": 21.108609764711684,
+          "mae_baseline": 21.225462350702852,
+          "mae_reference": 42.62255128205128,
+          "ratio_model": 0.49524510217671314,
+          "ratio_baseline": 0.4979866693160875,
+          "ratio_improvement": 0.002741567139374311
+        },
+        "hidden": {
+          "count": 560,
+          "mae_model": 3.6456672977872286,
+          "mae_baseline": 3.6456672977872286,
+          "mae_reference": 4.878997311803499,
+          "ratio_model": 0.7472165006050443,
+          "ratio_baseline": 0.7472165006050443,
+          "ratio_improvement": 0.0
+        },
+        "hidden-future": {
+          "count": 322,
+          "mae_model": 3.445115678999095,
+          "mae_baseline": 3.573735574112401,
+          "mae_reference": 5.757955489227114,
+          "ratio_model": 0.5983227354648291,
+          "ratio_baseline": 0.6206605071537468,
+          "ratio_improvement": 0.022337771688917707
+        },
+        "missing": {
+          "count": 163,
+          "mae_model": 5.5334893409449295,
+          "mae_baseline": 5.871278412228152,
+          "mae_reference": 8.60094304493806,
+          "ratio_model": 0.6433584447697943,
+          "ratio_baseline": 0.6826319371668894,
+          "ratio_improvement": 0.03927349239709509
+        }
+      }
+    },
+    "20260912_1100": {
+      "score": 0.5903644084826141,
+      "baseline_score": 0.606664835761245,
+      "components": {
+        "forecast": {
+          "count": 1100,
+          "mae_model": 11.18038377362481,
+          "mae_baseline": 11.78179167502672,
+          "mae_reference": 20.571955454545456,
+          "ratio_model": 0.5434769581495695,
+          "ratio_baseline": 0.5727113157064263,
+          "ratio_improvement": 0.029234357556856747
+        },
+        "hidden": {
+          "count": 283,
+          "mae_model": 4.165749875538296,
+          "mae_baseline": 4.165749875538296,
+          "mae_reference": 7.543435829951615,
+          "ratio_model": 0.5522350782117035,
+          "ratio_baseline": 0.5522350782117035,
+          "ratio_improvement": 0.0
+        },
+        "hidden-future": {
+          "count": 160,
+          "mae_model": 5.446753590743639,
+          "mae_baseline": 5.378962335189594,
+          "mae_reference": 9.900914687194568,
+          "ratio_model": 0.550126302753446,
+          "ratio_baseline": 0.5432793337919092,
+          "ratio_improvement": -0.006846968961536816
+        },
+        "missing": {
+          "count": 195,
+          "mae_model": 3.9858248502625626,
+          "mae_baseline": 4.224290168216976,
+          "mae_reference": 5.569755984973631,
+          "ratio_model": 0.7156192948157374,
+          "ratio_baseline": 0.7584336153349409,
+          "ratio_improvement": 0.0428143205192036
+        }
+      }
+    }
+  },
+  "coverage": {
+    "labelled_target_rows": 3719,
+    "actual_target_rows": 4457,
+    "genuine_new_camera_target_rows_unsupported": 644,
+    "per_kind": {
+      "forecast": {
+        "labelled": 2036,
+        "actual": 2660
+      },
+      "hidden": {
+        "labelled": 843,
+        "actual": 849
+      },
+      "hidden-future": {
+        "labelled": 482,
+        "actual": 484
+      },
+      "missing": {
+        "labelled": 358,
+        "actual": 464
+      }
+    }
+  },
+  "causality_check": {
+    "requested": true,
+    "checks": [
+      {
+        "recording": "20260911_1100",
+        "status": "PASS_SAMPLED_CHECK",
+        "now_minute_of_day": 955.0,
+        "targets_checked": 32,
+        "future_observations_perturbed": 699,
+        "max_absolute_difference": 0.0,
+        "training_data_unchanged": true
+      },
+      {
+        "recording": "20260912_1100",
+        "status": "PASS_SAMPLED_CHECK",
+        "now_minute_of_day": 954.0,
+        "targets_checked": 30,
+        "future_observations_perturbed": 830,
+        "max_absolute_difference": 0.0,
+        "training_data_unchanged": true
+      }
+    ],
+    "scope": "One cutoff per recording; query context only; not exhaustive"
+  },
+  "limitations": [
+    "Historical masks have been repeatedly reused for model selection.",
+    "644 genuine new-camera targets have no labelled historical counterpart.",
+    "This surrogate is not an official or expected Kaggle score.",
+    "Callback data separation is not an operating-system sandbox."
+  ]
+}

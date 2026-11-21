@@ -1,0 +1,23 @@
+{
+  "file": "Madinah_LastChance_Calibrated_Challenge.csv",
+  "sha256": "dbafafe4d246499459d1fec50f5624601183bf7f2951092ff54a404cad23d063",
+  "row_count": 4457,
+  "id_match_sample": true,
+  "nonfinite": 0,
+  "negative": 0,
+  "changed_count": 1381,
+  "calibrations": {
+    "20260918_1100|cam_B|hidden": 0.5,
+    "20260918_1100|cam_G|hidden": 0.25,
+    "20260919_1100|cam_D|hidden": -1.25,
+    "20260918_1100|cam_B|hidden-future": 0.5,
+    "20260918_1100|cam_G|hidden-future": 0.25,
+    "20260919_1100|cam_D|hidden-future": -2.0,
+    "20260918_1100|cam_H|missing": -1.0,
+    "20260919_1100|cam_H|missing": -1.0
+  },
+  "retrospective_local_baseline": 0.6057000521183546,
+  "retrospective_local_candidate": 0.5942891511693646,
+  "caveat": "Offsets derived from same reused September 11/12 development labels used to assess them. This is IN-SAMPLE, optimistic, not independently validated; official Kaggle performance unknown.",
+  "upload_status": "Not uploaded to Kaggle"
+}

@@ -1,0 +1,82 @@
+{
+  "status": "PRODUCTION_DRY_RUN_VALID_FORMAT_NOT_OFFICIAL_KAGGLE_SCORE",
+  "human_approval_required": true,
+  "submitted_to_kaggle": false,
+  "official_score": null,
+  "note": "Baseline is archived V13 production reference, not the official sample. No guarantee this beats the established official 0.729. Archived historical validation is not a live-test estimate.",
+  "input_hashes": {
+    "train": "3210a0b33212a60a888977848ec09f5f89bc0954bfd3b88e61fb9d840537f6f6",
+    "test": "6f2c6400b02964f3f37b912a5d6dbe085b28e7070a8094bdfad918e57766e6b9",
+    "sample": "22e1d6a23de7095c18be2e1e2d8dfbccaaa4010e647feee608e10f16ee798471",
+    "archived_baseline": "268a031687db92e2968f4477fa216d32709658231fd14447eadf6aa31a27e991",
+    "candidate_py": "836f54e615089b67099d7b6d2d685765bc999b96bd14f2599982c095fbffa930"
+  },
+  "elapsed_seconds": 91.934,
+  "targets": 4457,
+  "supported": 3813,
+  "unsupported": 644,
+  "unsupported_camera_ids": [
+    "cam_I",
+    "cam_J",
+    "cam_K",
+    "cam_L",
+    "cam_M"
+  ],
+  "changed": 2792,
+  "unchanged": 1665,
+  "overall_max_absolute_change": 74.365536,
+  "overall_mean_absolute_change": 1.720724,
+  "by_kind": {
+    "forecast": {
+      "target_count": 2660,
+      "changed_count": 2105,
+      "unsupported_count": 555,
+      "max_absolute_change": 74.365536,
+      "mean_absolute_change": 2.481068
+    },
+    "hidden": {
+      "target_count": 849,
+      "changed_count": 0,
+      "unsupported_count": 0,
+      "max_absolute_change": 0.0,
+      "mean_absolute_change": 0.0
+    },
+    "hidden-future": {
+      "target_count": 484,
+      "changed_count": 312,
+      "unsupported_count": 0,
+      "max_absolute_change": 11.744802,
+      "mean_absolute_change": 0.396442
+    },
+    "missing": {
+      "target_count": 464,
+      "changed_count": 375,
+      "unsupported_count": 89,
+      "max_absolute_change": 21.06733,
+      "mean_absolute_change": 1.891692
+    }
+  },
+  "by_recording": {
+    "20260918_1100": {
+      "count": 2334,
+      "changed": 1326,
+      "unsupported": 299
+    },
+    "20260919_1100": {
+      "count": 2123,
+      "changed": 1466,
+      "unsupported": 345
+    }
+  },
+  "export_float_precision": "17 significant digits, lossless double-precision round-trip",
+  "export_csv_sha256": "b45698ca2372bca4e6396cf6a1fffac990373ecd1c279daa0fdaa539996f238a",
+  "unsupported_and_hidden_exact_numeric_preservation_after_csv_roundtrip": true,
+  "changed_against_v13_exported": 2792,
+  "unit_qa": {
+    "rows": 4457,
+    "unique_ids": true,
+    "follows_official_sample_id_order": true,
+    "all_nonnegative_finite": true,
+    "source_untouched_rows": 1493
+  }
+}

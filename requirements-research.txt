@@ -1,0 +1,7 @@
+# Optional/archival dependencies: install selectively based on the specific research script.
+-r requirements.txt
+lightgbm>=4
+catboost>=1.2
+xgboost>=2
+# Some archived AutoGluon scripts require autogluon.tabular, a large additional install.
+# Some archived neural-network experiments require torch; install per your hardware.

@@ -1,0 +1,224 @@
+{
+  "tool": "V3_PHASE0_AUDIT_ONLY",
+  "timestamp_utc": "2026-11-21T17:34:50.145963+00:00",
+  "root": "C:\\Users\\USER\\Desktop\\Madinah-AI-Fresh",
+  "reported_champion_local_score_not_replayed": 0.6057000521183546,
+  "target_score_strictly_below": 0.6,
+  "expected_missing_frozen_rows": 358,
+  "expected_fast_falling_rows_from_report": 147,
+  "writes_submission": false,
+  "files": {
+    "decision": {
+      "relative_path": "reports/breakthrough_v2/decision.md",
+      "exists": true,
+      "size_bytes": 5702,
+      "sha256": "add807e9f73d7b29329a1f76b86781ff33cb3f78670a02201f13e736b9d9fb6f"
+    },
+    "missing_targets": {
+      "relative_path": "reports/breakthrough_v2/missing_target_diagnostics.csv",
+      "exists": true,
+      "size_bytes": 93324,
+      "sha256": "8b2a4455db2dacb93ba9fc00914b2f97bc69a9dc607ba2a8712141c1ebb55379",
+      "schema": {
+        "rows": 358,
+        "columns": [
+          "id",
+          "recording",
+          "camera",
+          "minute_of_day",
+          "block_start",
+          "block_length",
+          "gap_position",
+          "gap_position_fraction",
+          "left_neighbor_distance",
+          "right_neighbor_distance",
+          "left_count",
+          "right_count",
+          "endpoint_slope_per_min",
+          "flow_pattern",
+          "local_prev_mean",
+          "local_next_mean",
+          "peer_median",
+          "truth",
+          "selected_prediction",
+          "reference_prediction",
+          "abs_error",
+          "normalized_full_score_contribution",
+          "task_reference_mae"
+        ],
+        "key_columns": {
+          "recording": "recording",
+          "camera": "camera",
+          "time": "minute_of_day"
+        },
+        "recording_counts": {
+          "20260912_1100": 195,
+          "20260911_1100": 163
+        },
+        "camera_counts": {
+          "cam_A": 61,
+          "cam_C": 55,
+          "cam_E": 55,
+          "cam_H": 48,
+          "cam_G": 43,
+          "cam_F": 35,
+          "cam_B": 35,
+          "cam_D": 26
+        },
+        "group_counts": {
+          "flow_pattern": {
+            "falling_fast": 147,
+            "rising_slow": 88,
+            "flat_endpoints": 78,
+            "falling_slow": 45
+          }
+        },
+        "null_counts_nonzero": {},
+        "duplicate_key_count": 0
+      }
+    },
+    "missing_groups": {
+      "relative_path": "reports/breakthrough_v2/missing_error_groups.csv",
+      "exists": true,
+      "size_bytes": 3820,
+      "sha256": "046e4a740b37b97f7c3d262c0b4aabb4fc0ab3cd277e5cbeb059bc9d8aaae931",
+      "schema": {
+        "rows": 48,
+        "columns": [
+          "dimension",
+          "value",
+          "n",
+          "mae",
+          "score_contribution",
+          "mean_left_distance",
+          "mean_right_distance"
+        ],
+        "key_columns": {
+          "recording": null,
+          "camera": null,
+          "time": null
+        },
+        "recording_counts": {},
+        "camera_counts": {},
+        "group_counts": {},
+        "null_counts_nonzero": {},
+        "duplicate_key_count": null
+      }
+    },
+    "task_comparisons": {
+      "relative_path": "reports/breakthrough_v2/per_task_score_comparisons.csv",
+      "exists": true,
+      "size_bytes": 3297,
+      "sha256": "2b8a968d63641f49b5ebac27a274ab1f3006fd8d9ba0bb94e62a6edba82e7409",
+      "schema": {
+        "rows": 24,
+        "columns": [
+          "model",
+          "recording",
+          "task",
+          "n",
+          "mae",
+          "reference_mae",
+          "ratio",
+          "champion_mae",
+          "ratio_delta_vs_champion"
+        ],
+        "key_columns": {
+          "recording": "recording",
+          "camera": null,
+          "time": null
+        },
+        "recording_counts": {
+          "20260911_1100": 12,
+          "20260912_1100": 12
+        },
+        "camera_counts": {},
+        "group_counts": {},
+        "null_counts_nonzero": {},
+        "duplicate_key_count": null
+      }
+    },
+    "recording_results": {
+      "relative_path": "reports/breakthrough_v2/per_recording_results.csv",
+      "exists": true,
+      "size_bytes": 588,
+      "sha256": "733974b34341c06a747a15b5af6e8d2886854197d5e4bdb7cb212e5116f4a2fe",
+      "schema": {
+        "rows": 6,
+        "columns": [
+          "model",
+          "recording",
+          "score",
+          "baseline_score",
+          "score_delta_vs_champion"
+        ],
+        "key_columns": {
+          "recording": "recording",
+          "camera": null,
+          "time": null
+        },
+        "recording_counts": {
+          "20260911_1100": 3,
+          "20260912_1100": 3
+        },
+        "camera_counts": {},
+        "group_counts": {},
+        "null_counts_nonzero": {},
+        "duplicate_key_count": null
+      }
+    },
+    "validation_integrity": {
+      "relative_path": "reports/breakthrough_v2/validation_integrity.json",
+      "exists": true,
+      "size_bytes": 4448,
+      "sha256": "0e1d9bd21a12291f455208dfdb2f55191a7ec4e5a9dd13dc6c195e6b4e237287",
+      "top_level_keys": [
+        "candidate_frozen_scores",
+        "champion_local_score",
+        "champion_official_public_best",
+        "frozen_rts_causality_checks",
+        "future_use",
+        "hidden_candidate_causality_checks",
+        "independent_holdout_protocol",
+        "independent_recording_holdouts",
+        "label_invariance",
+        "official_score_verified",
+        "reused_frozen_folds",
+        "reused_frozen_status",
+        "selected_fold_reuse_risk",
+        "submission_generated"
+      ]
+    },
+    "missing_state_space_source": {
+      "relative_path": "src/final_missing_hidden_research/missing_state_space.py",
+      "exists": true,
+      "size_bytes": 4096,
+      "sha256": "216838bcd900c50913eb1070551d104e8da3d79f8ee8fc68c01daccb7d6d17f7"
+    },
+    "hidden_profile_transfer_source": {
+      "relative_path": "src/final_missing_hidden_research/hidden_profile_transfer.py",
+      "exists": true,
+      "size_bytes": 4264,
+      "sha256": "91ae8c2d374161856d403494a6f113237615211bcb702b9baa33e36ba123309d"
+    }
+  },
+  "warnings": [],
+  "possible_evaluator_or_missing_scripts": [
+    "src\\evaluate_full_solution.py",
+    "src\\exp_missing_cautious.py",
+    "src\\exp_missing_cautious_higher.py",
+    "src\\exp_missing_smoothed.py",
+    "src\\exp_missing_splines.py",
+    "src\\final_missing_hidden_research\\best_missing_model.py",
+    "src\\final_missing_hidden_research\\diagnose_missing.py",
+    "src\\final_missing_hidden_research\\independent_missing_loro.py",
+    "src\\final_missing_hidden_research\\missing_state_space.py",
+    "src\\final_missing_hidden_research\\run_missing_rts.py",
+    "src\\frozen_protocol.py",
+    "src\\score_v1_frozen.py",
+    "src\\test_full_v3_evaluation.py",
+    "src\\test_missing_single_cam.py",
+    "src\\test_task_missing.py",
+    "src\\verify_v1_scores.py"
+  ]
+}

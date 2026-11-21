@@ -1,0 +1,47 @@
+# Credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+kaggle.json
+config/kaggle.json
+*.p12
+*.pfx
+
+# Official competition data and any private/proprietary artifacts
+/data/*
+!/data/README.md
+!/data/raw/
+!/data/private/
+/data/raw/**
+/data/private/**
+/outputs/**
+!/outputs/README.md
+*.parquet
+*.feather
+*.pickle
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# Local artifacts
+*.log
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak

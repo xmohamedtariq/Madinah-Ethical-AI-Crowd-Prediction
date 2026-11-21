@@ -1,0 +1,35 @@
+{
+  "name": "Madinah_Best_Per_Category_Combined.csv",
+  "sha256": "dbafafe4d246499459d1fec50f5624601183bf7f2951092ff54a404cad23d063",
+  "row_count": 4457,
+  "unique_ids": 4457,
+  "matches_sample_order": true,
+  "changed_vs_prior_official_0_729": 1381,
+  "max_abs_difference_vs_lastchance": 0.0,
+  "max_abs_difference_vs_prior": 2.000000004962999,
+  "per_kind": {
+    "forecast": {
+      "rows": 2660,
+      "source": "Champion 0.605700",
+      "changed_from_previous_official_0_729": 0
+    },
+    "hidden": {
+      "rows": 849,
+      "source": "LastChance calibration based on Champion",
+      "changed_from_previous_official_0_729": 849
+    },
+    "hidden-future": {
+      "rows": 484,
+      "source": "LastChance calibration based on Champion",
+      "changed_from_previous_official_0_729": 484
+    },
+    "missing": {
+      "rows": 464,
+      "source": "LastChance calibration based on Champion",
+      "changed_from_previous_official_0_729": 48
+    }
+  },
+  "retrospective_local_selected_0_594289": "in-sample/reused folds only; not independently verified",
+  "public_kaggle_score": "UNTESTED",
+  "warning": "This composite is numerically identical to the previously generated LastChance CSV. Do not submit again if LastChance was already submitted."
+}

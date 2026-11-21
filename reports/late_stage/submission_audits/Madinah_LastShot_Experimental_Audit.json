@@ -1,0 +1,83 @@
+{
+  "candidate": "Madinah_LastShot_Experimental.csv",
+  "sha256": "d68be0eca97453a1c1f3fcf6ee7e1ecbc69569036010259513853ce1c8e3ee37",
+  "rows": 4457,
+  "changed": 813,
+  "valid": true,
+  "reused_dev_local_score_from_known_champion": 0.5927808585814978,
+  "prior_retrospective_local_score": 0.5942891511693646,
+  "historical_comparisons": [
+    {
+      "recording": "20260911_1100",
+      "kind": "forecast",
+      "n": 936,
+      "old_mae": 21.108609764711684,
+      "new_mae": 21.026302568647562,
+      "delta": -0.00024138394344187748
+    },
+    {
+      "recording": "20260911_1100",
+      "kind": "hidden",
+      "n": 560,
+      "old_mae": 3.6342623603697364,
+      "new_mae": 3.6342623603697364,
+      "delta": 0.0
+    },
+    {
+      "recording": "20260911_1100",
+      "kind": "hidden-future",
+      "n": 322,
+      "old_mae": 3.4299154474688067,
+      "new_mae": 3.4299154474688067,
+      "delta": 0.0
+    },
+    {
+      "recording": "20260911_1100",
+      "kind": "missing",
+      "n": 163,
+      "old_mae": 5.47786116708118,
+      "new_mae": 5.47786116708118,
+      "delta": 0.0
+    },
+    {
+      "recording": "20260912_1100",
+      "kind": "forecast",
+      "n": 1100,
+      "old_mae": 11.18038377362481,
+      "new_mae": 11.00513740296579,
+      "delta": -0.0010648378264661886
+    },
+    {
+      "recording": "20260912_1100",
+      "kind": "hidden",
+      "n": 283,
+      "old_mae": 3.9677533995161562,
+      "new_mae": 3.9677533995161562,
+      "delta": 0.0
+    },
+    {
+      "recording": "20260912_1100",
+      "kind": "hidden-future",
+      "n": 160,
+      "old_mae": 4.9741499176889885,
+      "new_mae": 4.958144430253936,
+      "delta": -0.00020207081795878135
+    },
+    {
+      "recording": "20260912_1100",
+      "kind": "missing",
+      "n": 195,
+      "old_mae": 3.9531791340280718,
+      "new_mae": 3.9531791340280718,
+      "delta": 0.0
+    }
+  ],
+  "patch": {
+    "20260918_1100|cam_A|forecast": -3.0,
+    "20260918_1100|cam_E|forecast": -3.0,
+    "20260919_1100|cam_A|forecast": 4.0,
+    "20260919_1100|cam_E|forecast": 3.0,
+    "20260919_1100|cam_D|hidden-future": -0.6
+  },
+  "warning": "Exploratory, heavily reused development recordings; no independent validation; likely Kaggle score unknown; cannot claim 0.400 or improvement from 0.729. Never use to set leaderboard expected score."
+}

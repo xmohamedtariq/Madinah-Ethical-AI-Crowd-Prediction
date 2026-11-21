@@ -1,0 +1,109 @@
+{
+  "experiment": "V3_3_CAMERA_E_PSEUDOGAP_RESIDUAL_CALIBRATION",
+  "generated_utc": "2026-11-21T17:53:19.772176+00:00",
+  "status": "RESEARCH_ONLY_NO_SUBMISSION",
+  "champion_reference_score": 0.6057000521183546,
+  "kaggle_public_best_user_report": 0.729,
+  "target_score": 0.6,
+  "champion": {
+    "kind": "SELECTED_CHAMPION_CALLBACK",
+    "path": "C:\\Users\\USER\\Desktop\\Madinah-AI-Fresh\\verified_605700\\cloud_research\\selected\\candidate.py",
+    "sha256": "836f54e615089b67099d7b6d2d685765bc999b96bd14f2599982c095fbffa930"
+  },
+  "train_sha256": "3210a0b33212a60a888977848ec09f5f89bc0954bfd3b88e61fb9d840537f6f6",
+  "frozen_mask_manifest": {
+    "excluded_mask_rows": 358,
+    "id_manifest_sha256": "8b2a4455db2dacb93ba9fc00914b2f97bc69a9dc607ba2a8712141c1ebb55379"
+  },
+  "protocol": {
+    "seed": 33117,
+    "strata": [
+      [
+        "fast",
+        8
+      ],
+      [
+        "fast",
+        12
+      ],
+      [
+        "control",
+        7
+      ]
+    ],
+    "quarters": 4,
+    "mask_guard_minutes": 7,
+    "outer_protocol": "recording-disjoint E pseudo gaps, exactly two dates, 2 panels per date",
+    "frozen_masks_excluded_from_released": true,
+    "frozen_labels_used_in_fit": false,
+    "selection_after_original_frozen_error_analysis": true,
+    "old_records_cam_E_support": 0
+  },
+  "pseudo_target_count_by_date": {
+    "20260911_1100": 108,
+    "20260912_1100": 108
+  },
+  "pseudo_fast_count_by_date": {
+    "20260911_1100": 80,
+    "20260912_1100": 80
+  },
+  "outer_holdout_results": [
+    {
+      "holdout": "20260911_1100",
+      "training": "20260912_1100",
+      "gated": 80,
+      "alpha_family": "SHRUNK_WEIGHTED_E_RIDGE_FIXED",
+      "n": 108,
+      "ref_mae": 30.03850415479582,
+      "champion_mae": 10.883336378111856,
+      "candidate_mae": 10.819782893412846,
+      "champion_ratio": 0.36231286092101456,
+      "candidate_ratio": 0.3601971269160354,
+      "delta_ratio": -0.0021157340049791987,
+      "changed": 80
+    },
+    {
+      "holdout": "20260912_1100",
+      "training": "20260911_1100",
+      "gated": 80,
+      "alpha_family": "SHRUNK_WEIGHTED_E_RIDGE_FIXED",
+      "n": 108,
+      "ref_mae": 14.296722182652738,
+      "champion_mae": 7.744223638164586,
+      "candidate_mae": 7.747621675824967,
+      "champion_ratio": 0.5416782629770355,
+      "candidate_ratio": 0.5419159424686677,
+      "delta_ratio": 0.00023767949163230984,
+      "changed": 80
+    }
+  ],
+  "guardrail": {
+    "pass": false,
+    "outer_wins": 1,
+    "mean_missing_ratio_delta": -0.0009390272566734444,
+    "max_harm_delta": 0.00023767949163230984
+  },
+  "frozen_config_sha256": "0ac2f50562d7d46f0785cd056297bb2da706e4b8d4eea69f4dfc19a2d223f2d3",
+  "frozen_preview": {
+    "status": "RETROSPECTIVE_REUSED_FROZEN_NOT_INDEPENDENT_NOT_PROMOTABLE",
+    "score": 0.6057086999660036,
+    "delta": 8.647847648933141e-06,
+    "reaches_0_600_retrospective_only": false,
+    "gated_E": 55,
+    "changed_E": 55,
+    "fold_deltas": {
+      "20260911_1100": 0.00011526586470189704,
+      "20260912_1100": -0.00010661801705296389
+    },
+    "camera_E_full_score_delta": 8.647847648933141e-06,
+    "champion_reconstructed": 0.6057000521183546
+  },
+  "decision": "NO_AUTOMATIC_PROMOTION_UNTOUCHED_E_RECORDINGS_UNAVAILABLE",
+  "limitations": [
+    "Both dates were already used in prior research; E pseudo mask LOSO is not independent final validation.",
+    "Frozen original Missing labels were excluded from pseudo-target windows and released features, but other official frozen task masks are not fully reproduced.",
+    "E exists only in the Friday/Saturday recordings: two recording-level folds are insufficient for reliable transfer.",
+    "The frozen preview is retrospective and cannot alone prove a better Kaggle score.",
+    "This script contains no submission generation, integration, or Kaggle API code."
+  ]
+}
