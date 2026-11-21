@@ -1,91 +1,137 @@
-# Madinah Ethical AI — Multi-Camera Crowd Count Prediction
+<div align="center">
 
-**Reproducible machine-learning research, forecasting, reconstruction, and leakage-aware validation.**
+Madinah Ethical AI
 
-[Competition on Kaggle](https://www.kaggle.com/competitions/MDA-Ethical-AI-KAUST-Academy) · **Author: Mohammed Tariq** · **Research project / portfolio case study**
+Multi-camera crowd count forecasting and reconstruction
 
-> [!IMPORTANT]
-> This is an honest record of an exploratory competition project, **not a winning submission**. The best **public Kaggle score shown for the author was 0.729** (lower is better). The selected model's **0.6057000521183546 local score** was measured on reused development recordings with a reconstructed scoring reference. Those numbers are **not directly comparable** and the local result is **not an estimate of the private leaderboard**. No local or official score of 0.400 was established.
 
-## Problem
 
-Predict or reconstruct crowd counts from minute-level CCTV-derived *counts* across several cameras, under four different information-access constraints:
 
-| Task | Goal | Time/data constraint |
-|---|---|---|
-| `forecast` | Predict count for upcoming minutes | Use only observations available at the supplied forecast origin (`now`) |
-| `hidden-future` | Estimate unavailable camera measurements for future timestamps | Respect the forecast origin and hidden-camera availability |
-| `hidden` | Reconstruct unseen camera observations | Use only officially released information; do not use hidden target counts |
-| `missing` | Fill interior gaps in observed camera series | Use released context on both sides, when permitted by competition rules |
+Model source · Validation results · Run locally · Research notes
 
-The official testing schema in the saved audit contained **4,457 target rows**: 2,660 forecast, 849 hidden, 484 hidden-future, and 464 missing. Of these, 644 targets belonged to cameras not represented in the historical train data, an important generalization limitation.
+</div>
 
-## Approach
+The problem
 
-```mermaid
+A camera count is missing at 11:05. Its 11:06 reading can help reconstruct the gap. A forecast issued at 11:00 has to predict 11:05 using only what was known at 11:00. This distinction shaped how the model used every camera in the Madinah competition.
+
+The inputs are minute-level crowd counts derived from CCTV. Each of the 4,457 target rows specifies a camera, a time and one of four tasks.
+
+Task
+
+Test targets
+
+Matched local targets
+
+How the selected model handles it
+
+forecast
+
+2,660
+
+2,036
+
+Forecast from observations through the supplied cutoff (now). Reconcile forecasts using historical relationships between cameras.
+
+hidden-future
+
+484
+
+482
+
+Estimate a hidden camera’s future count using visible cameras and calibration data available by the cutoff.
+
+hidden
+
+849
+
+843
+
+Keep the archived V13 estimate for each hidden observation.
+
+missing
+
+464
+
+358
+
+Fill gaps using released counts on either side, patterns from other cameras and the shape of similar historical events.
+
+Total
+
+4,457
+
+3,719
+
+
+
+Results
+
+Evaluation
+
+Score ↓
+
+What it measures
+
+Best public Kaggle result for Mohammed Tariq
+
+0.729
+
+Best score displayed for the author on the public leaderboard, rounded to three decimals.
+
+Selected model on local development recordings
+
+0.6057000521183546
+
+Replay of 3,719 matched targets from September 11–12, 2026, using a reconstructed scoring reference.
+
+Model selection reused both development recordings. The local and public scores measure different evaluations, so the local replay cannot establish a private leaderboard score or final rank. The project’s original 0.400 target remained unmet. Validation limitations
+
+The per-task results explain why both recordings matter. Against the frozen baseline, the model reduced mean absolute error for missing on both Friday (5.87 → 5.53 people) and Saturday (4.22 → 3.99). For hidden-future, it improved Friday (3.57 → 3.45) but worsened Saturday (5.38 → 5.45). Later experiments and their rejection decisions are part of the research record. Per-recording results · Experiment decisions
+
+How predictions are assembled
+
+The adapter starts with an archived V13 prediction for every target ID. 644 targets come from cameras I–M, which were absent from the historical training set. The model keeps the reference estimate for those cameras.
+
 flowchart TD
-    A[Official train and released test observations] --> B[Availability / leakage checks]
-    B --> C{Prediction task}
-    C -->|Forecast| D[Strict-mask forecasting and camera reconciliation]
-    C -->|Hidden-future| E[Released-context peer calibration]
-    C -->|Missing| F[Gap modeling and event / peer bridges]
-    C -->|Hidden| G[Frozen prior baseline]
-    D --> H[Per-ID support gate]
-    E --> H
-    F --> H
-    G --> H
-    I[Archived V13 reference predictions] --> H
-    H --> J[Checked nonnegative predictions and original ID ordering]
-```
+    A["Target ID with V13 estimate"] --> B{"Camera seen in training?"}
+    B -->|No| R["Keep V13 estimate"]
+    B -->|Yes| C{"Task"}
+    C -->|hidden| R
+    C -->|forecast| F["Forecast and reconcile cameras"]
+    C -->|hidden-future| P["Calibrate from visible cameras"]
+    C -->|missing| M["Reconstruct the gap"]
+    R --> V["Restore sample ID order and validate counts"]
+    F --> V
+    P --> V
+    M --> V
 
-The selected composite source lives at [`src/champion/`](src/champion/), exposing `candidate.predict_fold(train, released, targets, baseline)`. The archival validation runner expects an additional original `research_kit/input/benchmark.py` that is **not included in the available shared artifacts**. The production adapter at [`scripts/build_champion_production.py`](scripts/build_champion_production.py) is included and expects the **official CSVs plus an archived reference prediction file** supplied by the user. It does **not** submit to Kaggle.
+The saved dry run produced 4,457 unique IDs in official sample order, all with finite, nonnegative predictions. Two separate checks perturbed observations after a forecast cutoff. Across the 32 targets checked on Friday and 30 on Saturday, the largest prediction change was zero. Those checks cover one cutoff per recording. Output audit · Cutoff checks
 
-## Key outcomes
+Run locally
 
-| Measurement | Result and interpretation |
-|---|---|
-| Reused local evaluation | **0.6057000521183546**; replayed 3,719 matched labelled targets on Sept 11 and Sept 12, 2026 |
-| Best displayed public Kaggle score | **0.729**; competition display rounds to three decimal places |
-| Saved local causal checks | Two sampled cutoff perturbation checks passed for the selected composite; not an exhaustive proof |
-| New-camera targets | **644** had no direct historical-camera support in the selected model |
-| Later exploratory corrections | Several failed to generalize; the established champion was retained |
+The production adapter needs four input files. Three come from Kaggle. The fourth is the archived V13 production prediction file, which must be supplied separately.
 
-The reports under [`reports/`](reports/) are preserved as **historical experimental records**, including rejected experiments and earlier metrics; they should **not** be interpreted as one independent held-out benchmark. See [Limitations](docs/LIMITATIONS.md).
+Location
 
-## Project layout
+Required input
 
-```text
-src/champion/             Saved selected forecast / hidden / missing source
-scripts/                  Production adapter and CSV validation helper
-research/historical/      Older model development scripts (research archive)
-research/late_stage/      V3.1–V3.4 hypothesis testing and diagnostics
-research/validation_interfaces/
-research/submission_experiments/
-reports/champion/         Frozen result metadata and aggregate report JSON
-reports/history/          Versioned research and validation write-ups
-reports/late_stage/       Aggregate experiment findings (not raw labels)
-docs/                     Project story, constraints, and publishing notes
-data/                     Instructions only; official competition data excluded
-```
+data/raw/
 
-## Reproducing the model on your own machine
+Official train.csv, test.csv and sample_submission.csv. The sample defines the output IDs and row order.
 
-**Python 3.12** is a reasonable starting point; original `__pycache__` files were not included. On Windows PowerShell:
+data/private/v13_reference.csv
 
-```powershell
-cd .\Madinah-Ethical-AI-Crowd-Prediction
+V13 predictions with columns id,people and one row per sample ID. The model uses these counts as its starting estimates.
+
+1. Set up Python. From the repository root in Windows PowerShell, create a virtual environment. Python 3.12 is a suggested starting version.
+
 py -3.12 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-```
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 
-1. Read and accept the rules for the [official Kaggle competition](https://www.kaggle.com/competitions/MDA-Ethical-AI-KAUST-Academy/rules). Download `train.csv`, `test.csv`, and `sample_submission.csv` **yourself**, placing them under `data/raw/` (which is gitignored).
-2. Obtain your **own archived V13 production reference prediction CSV** and place it under `data/private/v13_reference.csv` (also gitignored). The public Kaggle sample submission is **not** a substitute for this model input.
-3. Run the production adapter:
+2. Build the prediction CSV and audit. Download the official files under the competition’s rules and place all four inputs at the paths above. Choose fresh output filenames for each run. Competition data · Competition rules
 
-```powershell
-python .\scripts\build_champion_production.py `
+.\.venv\Scripts\python.exe .\scripts\build_champion_production.py `
   --source .\src\champion `
   --train .\data\raw\train.csv `
   --test .\data\raw\test.csv `
@@ -93,28 +139,17 @@ python .\scripts\build_champion_production.py `
   --baseline .\data\private\v13_reference.csv `
   --output .\outputs\champion_reproduced.csv `
   --audit .\outputs\champion_reproduced_audit.json
-```
 
-Validate the file independently with:
+3. Validate the output. The checker verifies the columns, row count, ID order and prediction values. Both commands run locally. Uploading predictions to Kaggle is a separate manual step.
 
-```powershell
-python .\scripts\validate_submission.py --sample .\data\raw\sample_submission.csv --submission .\outputs\champion_reproduced.csv
-```
+.\.venv\Scripts\python.exe .\scripts\validate_submission.py `
+  --sample .\data\raw\sample_submission.csv `
+  --submission .\outputs\champion_reproduced.csv
 
-**No code in this repository uploads to Kaggle automatically.** Archived research modules are not a maintained package and may require additional private inputs, original folder layouts, or optional dependencies; see [`requirements-research.txt`](requirements-research.txt).
+Research archive and reuse
 
-## Data permissions and privacy
+The selected model exposes candidate.predict_fold(train, released, targets, baseline). Replaying the original local evaluation also requires research_kit/input/benchmark.py, which is absent from this archive. Older experiments may depend on additional private inputs or their original directory layouts. Selected source · Archived experiments · Research dependencies
 
-This repository intentionally **does not redistribute official CCTV counts, train/test data, target labels, Kaggle credentials, or precomputed submission CSVs**. It uses the count-series problem definition; no video frames are stored. Check the competition's data and code-sharing terms before making any repository public. The existence of this package **does not imply a license to republish the dataset**. [See publishing notes](docs/PUBLISHING_AND_DATA.md).
+The repository contains code and aggregate research reports. Official data, target labels, video frames, credentials and prediction CSVs are excluded. The research code has no published software license. Contact the author about reuse. Data and publishing notes
 
-## Reflections
-
-A major lesson was the gap between repeatedly optimized local development folds and official public evaluation, and how stringent causal constraints, distribution shift, unseen cameras, and non-independent re-testing can affect generalization. The project prioritizes reproducible rejections and transparent reporting rather than claiming unverified results.
-
-## License
-
-**No software license has been selected for the user-provided research code.** Contact the author for permission to reuse; choose and add a license only after reviewing competition rules and third-party dependencies.
-
----
-
-*This packaged repository contains source and documents **available in the shared conversation/file library**, not a complete filesystem snapshot of the author's local `Madinah-AI-Fresh` directory. Some original experiment scripts, dependency artifacts, baselines, and data are not available in this package.*
+Mohammed Tariq · Portfolio · GitHub · LinkedIn
